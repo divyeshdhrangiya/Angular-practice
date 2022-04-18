@@ -7,12 +7,14 @@ import {FormsModule} from '@angular/forms';
 import { NameEditorComponent } from './name-editor/name-editor.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NameEditorComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,
