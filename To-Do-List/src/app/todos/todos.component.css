@@ -1,0 +1,10 @@
+.todo .id{
+    
+    flex: 1 1 50px;
+
+
+}
+ .todo .content{
+   
+    flex: 1 1 100%;
+}

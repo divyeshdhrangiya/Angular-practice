@@ -1,0 +1,16 @@
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name" class="form-control" />
+<div *ngIf="name.invalid && (name.dirty || name.touched)">
+  <div style="color: red">Name is required.</div>
+</div>
+
+<label for="name">Address: </label>
+<input id="Address" type="text" [formControl]="Address" class="form-control" />
+<div *ngIf="Address.invalid && (Address.dirty || Address.touched)">
+  <div *ngIf="Address.errors?.['required']">
+    <div style="color: red">Address is required.</div>
+  </div>
+  <div *ngIf="Address.errors?.['minlength']">
+    <div style="color: red">Length must be 10 characters</div>
+  </div>
+</div>

@@ -3,17 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RestDashComponent } from './rest-dash/rest-dash.component';
-
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestDashComponent
+    NameEditorComponent,
+    ProfileEditorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
