@@ -19,8 +19,8 @@
         <td>{{item.username}}</td>
         <td>{{item.email}}</td>
         <td>
-          <button class="btn btn-success">Edit</button>&nbsp;&nbsp;&nbsp;
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-success" >Edit</button>&nbsp;&nbsp;&nbsp;
+          <button class="btn btn-danger" (click)="UserDelete(item)">Delete</button>
 
         </td>
         <!-- <td>{{item.password}}</td> -->

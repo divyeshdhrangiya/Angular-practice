@@ -26,6 +26,12 @@ export class DisplayDataComponent implements OnInit {
   }
   ngOnInit(): void {
   }
+  UserDelete(userData:any)
+  {
+    this.userService.DeleteUser(userData._id).subscribe((data:any)=>{
+      console.log(data)
+    })
+  }
 
   
   
