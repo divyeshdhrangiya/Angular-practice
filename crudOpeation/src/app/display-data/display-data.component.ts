@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "./../Services/user.service";
 import {HttpClient} from '@angular/common/http';
+import  {User} from "./../Interfaces/User"
 
 
 
@@ -16,6 +17,8 @@ import {HttpClient} from '@angular/common/http';
 export class DisplayDataComponent implements OnInit {
 
   userData:any;
+  id:any
+  
   constructor(private http:HttpClient,private userService:UserService) { 
     this.userService.GetAllUSer().subscribe((data:any)=>{
       this.userData=data;
@@ -32,6 +35,26 @@ export class DisplayDataComponent implements OnInit {
       console.log(data)
     })
   }
+EditData(userData:any)
+{
+  this.userData=userData
+  // this.id=userData._id
+  console.log(userData._id);
+  
+  
+}
+
+  UserUpdate(userData:any)
+  {
+    this.userService.UpdateUSer(userData,userData._id).subscribe((data:any)=>{
+      console.log(userData)
+      this.userData=userData;
+
+
+    })
+  }
+
+
 
   
   
