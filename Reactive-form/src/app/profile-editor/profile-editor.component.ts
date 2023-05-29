@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validator,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -7,14 +13,27 @@ import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
   styleUrls: ['./profile-editor.component.css'],
 })
 export class ProfileEditorComponent {
-  profileForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl(''),
-    address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl(''),
+  constructor(private fb: FormBuilder) {}
+
+  // profileForm = new FormGroup({
+  //   firstName: new FormControl('', Validators.required),
+  //   lastName: new FormControl(''),
+  //   address: new FormGroup({
+  //     street: new FormControl(''),
+  //     city: new FormControl(''),
+  //     state: new FormControl(''),
+  //     zip: new FormControl(''),
+  //   }),
+  // });
+
+  profileForm = this.fb.group({
+    firstName: ['',Validators.required],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: [''],
     }),
   });
 
@@ -23,13 +42,12 @@ export class ProfileEditorComponent {
     console.warn(this.profileForm.value);
   }
 
-  updateProfile()
-  {
+  updateProfile() {
     this.profileForm.patchValue({
-        firstName:"divyesh",
-        address:{
-          street:"Drew Street"
-        }
+      firstName: 'divyesh',
+      address: {
+        street: 'Drew Street',
+      },
     });
   }
 }
